@@ -24,7 +24,7 @@
 				// 與 210 相較，有何差別?
 
 
-// 250
+// 250*
                 var s = $("#aTextField").attr("value");
                 $("#report").append(s);
 

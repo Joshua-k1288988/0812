@@ -19,6 +19,7 @@
                 <img id="imgDog"
                      src="images/dog.jpeg"
                      class="pet img-responsive img-thumbnail"
+                     data-species="狗"
                       />
             </div>
 
@@ -26,6 +27,7 @@
                 <img id="imgCat"
                      src="images/cat.jpeg"
                      class="pet img-responsive img-thumbnail"
+                     data-species="貓"
                       />
             </div>
 
@@ -33,6 +35,7 @@
                 <img id="imgRabbit"
                      src="images/rabbit.jpeg"
                      class="pet img-responsive img-thumbnail"
+                     data-species="兔"
                       />
             </div>
 
@@ -82,8 +85,37 @@ $(function () {
 
     // 請接著寫作
     // Lab 程式:
+    var speciesList = ["狗狗", "貓", "兔兔"];
+    //$(".pet:eq(0)").data("species",speciesList[0]);
+    //$(".pet:eq(1)").data("species",speciesList[1]);
+    //$(".pet:eq(2)").data("species",speciesList[2]);
 
-    
+    // for (let i = 0 ; i<speciesList.length ; i++){
+    //     $(".pet:eq("+i+")").data("species",speciesList[i]);
+    // }
+
+    //for (let i = 0 ; i<speciesList.length ; i++){
+    //    $(".pet").eq(i).data("species",speciesList[i]);
+    //}
+
+    $(".pet").each(function(key , obj){
+        $(obj).data("species", speciesList[key]);
+    });
+
+    showToast("Hint", "請點一下正確的圖案");
+    $(".pet").on("click" , function(){
+        let petname = $(this).data("species");
+        if(petname != "貓"){
+            showToast("Hint", "不是喔，我是" + petname);
+            $(this).fadeOut("fast");
+            // $(this).fadeTo("fast",0.5);
+        }
+        else{
+            showToast("Note", "答對了，我就是" + petname);
+            $(".pet").not("img[data-species='貓']").fadeTo("fast",0.5);
+        }
+        
+    });
 
 
 

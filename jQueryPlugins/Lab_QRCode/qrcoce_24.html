@@ -9,11 +9,18 @@
 </head>
 <body>
 
-<div id="qrcode"></div>
+    <div id="qrcode" ></div>
+<!-- <p>000<span id = "qrcode" ></span>XXXX</p> -->
 
 <script>
-
-$('#qrcode').qrcode("http://www.google.com");
+var qwee = {
+    width: 100,
+    height: 100,
+    text: "https://zh.wikipedia.org/wiki/%E7%B6%AD%E5%9F%BA"
+};
+    
+// $('#qrcode').qrcode("http://www.google.com");
+$('#qrcode').qrcode(qwee);
 
 </script>
 

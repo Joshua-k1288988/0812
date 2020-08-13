@@ -12,8 +12,15 @@
 
         $(document).ready(function () {
             // 在這裏寫程式
-            
-            
+            let obj = document.getElementById("panda");
+            $(obj).mouseenter(function(){
+                $(this).prop("src" , "panda2.jpg");
+                console("mouse enter image.")
+            })
+            $(obj).on("mouseleave", function(){
+                $(this).prop("src" , "panda1.jpg");
+                console("mouse leave image.")
+            })
             
             
             

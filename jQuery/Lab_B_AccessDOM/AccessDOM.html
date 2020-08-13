@@ -7,9 +7,12 @@
         $(document).ready(function () {
             $("#btnTry").click(function () {
                 // 在這裏寫程式
-                
-
-
+            
+              //$("#report").text("line1<br>line2");
+              //$("#report").html("line1<br>line2");
+              //$("#report").append("line1<br>line2");
+              var x =  $("#report").text();
+              alert(x);
                 
 
                 
@@ -28,7 +31,7 @@
 
 <form action="" method="put" onsubmit="return false;">
   <div>
-    <label>Text:</label> <input type="text" id="aTextField" name="someTextField"/>
+    <label>Text:</label> <input type="text" id="aTextField" name="someTextField" value="123" />
   </div>
   <div>
     <label>Radio group:</label>
