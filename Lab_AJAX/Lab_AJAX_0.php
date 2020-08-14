@@ -28,6 +28,29 @@
 		</select> 
 		<input type="submit" value="OK" /> 
 	</form>
-
+	<div id = "debug"></div>
+	<script>
+		//var dsa = 'A';
+		
+		// $.ajax({
+		// 		type: "get",
+		// 		url: './getLetterNumber.php?letter=' + dsa
+		// 	}).then(function(y){
+		// 		$("#letterNumber").html(y);
+		// 	})
+		$("#letter").on("change" ,function(){
+			var selectedLetter = $("#letter option:selected").text();
+			var url = './getLetterNumber.php?letter=' + selectedLetter;
+			$.ajax({
+				type: "get",
+				url: url
+			}).then(function(y){
+				$("#letterNumber").html(y);
+			})
+			
+		});
+		
+		$("#letter").trigger("change");
+	</script>
 </body>
 </html>
